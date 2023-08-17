@@ -147,3 +147,14 @@ for (let digit of digits) {
       updateDisplay(); // Mettre à jour l'affichage
     }
 }); }
+
+// Ajouter un écouteur d’événement au bouton du point décimal qui ajoute un point décimal à la chaîne du nombre saisi si elle n’en contient pas déjà un et met à jour l’affichage 
+dot.addEventListener("click", () => { 
+  if (inputNumber.length < 10) { // Si la longueur de la chaîne du nombre saisi est inférieure à 10 
+  if (!inputNumber.includes(".")) { // Si la chaîne du nombre saisi ne contient pas de point décimal 
+      if (inputNumber === "") { // Si la chaîne du nombre saisi est vide 
+          inputNumber = "0."; // Affecter la chaîne “0.” à la chaîne du nombre saisi 
+      } else { // Si la chaîne du nombre saisi n’est pas vide 
+          inputNumber += "."; // Ajouter un point décimal à la fin de la chaîne du nombre saisi 
+      } updateDisplay(); // Mettre à jour l’affichage 
+  } } });
