@@ -22,3 +22,8 @@ let inputNumber = ""; // La chaîne qui stocke le nombre saisi par l'utilisateur
 let inputOperator = ""; // La chaîne qui stocke l'opérateur saisi par l'utilisateur
 let calculationString = ""; // La chaîne qui stocke le calcul en cours
 let result = 0; // Le nombre qui stocke le résultat du calcul
+
+const form = document.querySelector('form');
+form.addEventListener('submit',event =>{
+    event.preventDefault();
+});
