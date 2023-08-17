@@ -16,3 +16,9 @@ const plus = document.getElementById("plus"); // Le bouton + qui ajoute l'opéra
 const equals = document.getElementById("equals"); // Le bouton = qui effectue le calcul et affiche le résultat
 const digits = document.querySelectorAll(".digit"); // Les boutons des chiffres de 0 à 9
 const dot = document.querySelector(".dot"); // Le bouton du point décimal
+
+// Déclarer les variables globales
+let inputNumber = ""; // La chaîne qui stocke le nombre saisi par l'utilisateur
+let inputOperator = ""; // La chaîne qui stocke l'opérateur saisi par l'utilisateur
+let calculationString = ""; // La chaîne qui stocke le calcul en cours
+let result = 0; // Le nombre qui stocke le résultat du calcul
