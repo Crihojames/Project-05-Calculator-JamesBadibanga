@@ -16,7 +16,12 @@ const plus = document.getElementById("plus"); // Le bouton + qui ajoute l'opéra
 const equals = document.getElementById("equals"); // Le bouton = qui effectue le calcul et affiche le résultat
 const digits = document.querySelectorAll(".digit"); // Les boutons des chiffres de 0 à 9
 const dot = document.querySelector(".dot"); // Le bouton du point décimal
+let inputcurseur = document.querySelector('input');
 const digitZeroTwo = document.getElementById("twoZero");
+const pi = document.getElementById("pi");
+
+// Masque le curseur clignotant By yvonne
+inputcurseur.style.caretColor = 'transparent';
 
 // Déclarer les variables globales
 let inputNumber = ""; // La chaîne qui stocke le nombre saisi par l'utilisateur
@@ -102,7 +107,13 @@ function calculate() {
     updateDisplay(); // Mettre à jour l'affichage
   }
 }
+// fonction qui ajout deux zero bouton au calculatrice 
+function btnZeroTwo() { 
+  inputNumber += "00";
+   updateDisplay();
+};
 
+//fonction pour calcule le nobre pi
 function btnZeroTwo() {
   inputNumber += "00";
    updateDisplay();
@@ -205,3 +216,4 @@ input.addEventListener("keydown", (event) => {
   else if (event.key === "Escape") { // Si la touche enfoncée est la touche Échap 
       resetAll(); // Appeler la fonction resetAll 
   } });
+
