@@ -1,4 +1,5 @@
-//
+//  import { calculate } from './calculator.js';
+
 // TODO: Faire la manipulation du DOM dans ce fichier
 
 // Sélectionner les éléments du DOM
@@ -15,6 +16,7 @@ const plus = document.getElementById("plus"); // Le bouton + qui ajoute l'opéra
 const equals = document.getElementById("equals"); // Le bouton = qui effectue le calcul et affiche le résultat
 const digits = document.querySelectorAll(".digit"); // Les boutons des chiffres de 0 à 9
 const dot = document.querySelector(".dot"); // Le bouton du point décimal
+const digitZeroTwo = document.getElementById("twoZero");
 
 // Déclarer les variables globales
 let inputNumber = ""; // La chaîne qui stocke le nombre saisi par l'utilisateur
@@ -101,6 +103,11 @@ function calculate() {
   }
 }
 
+function btnZeroTwo() {
+  inputNumber += "00";
+   updateDisplay();
+}
+
 // Ajouter des écouteurs d'événements aux boutons
 
 // Ajouter un écouteur d'événement au bouton AC qui appelle la fonction resetAll
@@ -129,6 +136,8 @@ plus.addEventListener("click", () => addOperator("+"));
 
 // Ajouter un écouteur d'événement au bouton = qui appelle la fonction calculate
 equals.addEventListener("click", calculate);
+
+digitZeroTwo.addEventListener("click", btnZeroTwo);
 
 // Parcourir les boutons des chiffres avec une boucle for...of
 for (let digit of digits) {
@@ -161,7 +170,7 @@ dot.addEventListener("click", () => {
   // Ajouter un écouteur d’événement à l’élément input qui permet de saisir des nombres avec le clavier 
 input.addEventListener("keydown", (event) => { 
 
-  if (event.key >= "0" && event.key <= "9") { // Si la touche enfoncée est un chiffre de 0 à 9 
+  if (event.key >= "0" || "0" && event.key <= "9") { // Si la touche enfoncée est un chiffre de 0 à 9 
       if (inputNumber.length < 10) { // Si la longueur de la chaîne du nombre saisi est inférieure à 10 
           if (inputNumber === "0") { // Si la chaîne du nombre saisi est égale à “0” 
               inputNumber = event.key; // Remplacer la chaîne du nombre saisi par la touche enfoncée 
