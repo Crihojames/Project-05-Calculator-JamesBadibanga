@@ -20,7 +20,7 @@ const pi = document.getElementById("pi");
 // Masque le curseur clignotant By yvonne
 inputcurseur.style.caretColor = 'transparent';
 
-//
+//Empêche le comportement par défaut
 const form = document.querySelector('form');
 form.addEventListener('submit',event =>{
     event.preventDefault();
@@ -53,16 +53,16 @@ function resetAll() {
 
 // Une fonction qui efface l'entrée actuelle
 function clearInput() {
-  inputNumber = ""; // Effacer la chaîne du nombre saisi
-  updateDisplay(); // Mettre à jour l'affichage
+  inputNumber = "";
+  updateDisplay();
 }
 
 // Une fonction qui change le signe de l'entrée actuelle
 function changeSign() {
   if (inputNumber) {
     // Si la chaîne du nombre saisi n'est pas vide
-    inputNumber = (-inputNumber).toString(); // Convertir le nombre saisi en son opposé et le reconvertir en chaîne
-    updateDisplay(); // Mettre à jour l'affichage
+    inputNumber = (-inputNumber).toString();
+    updateDisplay();
   }
 }
 
@@ -70,10 +70,10 @@ function changeSign() {
 function getPercentage() {
   if (calculationString) {
     // Si la chaîne du calcul en cours n'est pas vide
-    result /= 100; // Diviser le résultat par 100 pour obtenir le pourcentage
-    inputNumber = result.toString(); // Convertir le résultat en chaîne et l'affecter à la chaîne du nombre saisi
-    calculationString += " %"; // Ajouter le symbole du pourcentage à la fin de la chaîne du calcul en cours
-    updateDisplay(); // Mettre à jour l'affichage
+    result /= 100;
+    inputNumber = result.toString();
+    calculationString += " %";
+    updateDisplay();
   }
 }
 
