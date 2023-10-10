@@ -30,7 +30,7 @@ form.addEventListener('submit',event =>{
 // Déclarer les variables globales
 let inputNumber = "";
 let inputOperator = "";
-let calculationString = ""; // La chaîne qui stocke le calcul en cours
+let calculationString = "";
 let result = 0; // Le nombre qui stocke le résultat du calcul
 
 
@@ -38,17 +38,17 @@ let result = 0; // Le nombre qui stocke le résultat du calcul
 
 // Une fonction qui met à jour l'affichage de l'entrée et du calcul
 function updateDisplay() {
-  input.value = inputNumber; // Afficher le nombre saisi dans l'élément input
-  calcul.textContent = calculationString; // Afficher le calcul en cours dans l'élément p
+  input.value = inputNumber;
+  calcul.textContent = calculationString;
 }
 
 // Une fonction qui réinitialise tout
 function resetAll() {
-  inputNumber = ""; // Réinitialiser la chaîne du nombre saisi
-  inputOperator = ""; // Réinitialiser la chaîne de l'opérateur saisi
-  calculationString = ""; // Réinitialiser la chaîne du calcul en cours
-  result = 0; // Réinitialiser le résultat du calcul
-  updateDisplay(); // Mettre à jour l'affichage
+  inputNumber = "";
+  inputOperator = "";
+  calculationString = "";
+  result = 0;
+  updateDisplay();
 }
 
 // Une fonction qui efface l'entrée actuelle
