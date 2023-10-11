@@ -86,11 +86,11 @@ function addOperator(operator) {
     } 
     else {
       calculationString = inputNumber;
-      result = Number(inputNumber); // Convertir le nombre saisi en nombre et l'affecter à la variable result
+      result = Number(inputNumber);
     }
     inputNumber = "";
     inputOperator = operator; // Affecter l'opérateur passé en paramètre à la chaîne de l'opérateur saisi
-    updateDisplay(); // Mettre à jour l'affichage
+    updateDisplay();
   }
 }
 
