@@ -82,7 +82,7 @@ function addOperator(operator) {
   if (inputNumber) {
     if (calculationString) {
       calculationString += ` ${inputOperator} ${inputNumber}`;
-      result = eval(calculationString); // Évaluer la chaîne du calcul en cours et affecter le résultat à la variable result
+      result = eval(calculationString);
     } 
     else {
       calculationString = inputNumber;
@@ -97,12 +97,11 @@ function addOperator(operator) {
 // Une fonction qui effectue le calcul et affiche le résultat
 function calculate() {
   if (inputNumber && inputOperator) {
-    // Si la chaîne du nombre saisi et la chaîne de l'opérateur saisi ne sont pas vides
-    calculationString += ` ${inputOperator} ${inputNumber}`; // Ajouter l'opérateur et le nombre saisis à la fin de la chaîne du calcul en cours
-    result = eval(calculationString); // Évaluer la chaîne du calcul en cours et affecter le résultat à la variable result
-    inputNumber = result.toString(); // Convertir le résultat en chaîne et l'affecter à la chaîne du nombre saisi
-    calculationString += " ="; // Ajouter le symbole d'égalité à la fin de la chaîne du calcul en cours
-    updateDisplay(); // Mettre à jour l'affichage
+    calculationString += ` ${inputOperator} ${inputNumber}`;
+    result = eval(calculationString);
+    inputNumber = result.toString();
+    calculationString += " =";
+    updateDisplay();
   }
 }
 // fonction qui ajout deux zero bouton au calculatrice 
