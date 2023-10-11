@@ -133,12 +133,9 @@ for (let digit of digits) {
   // Ajouter un écouteur d'événement à chaque bouton des chiffres qui ajoute le chiffre correspondant à la chaîne du nombre saisi et met à jour l'affichage
   digit.addEventListener("click", () => {
     if (inputNumber.length < 10) {
-      // Si la longueur de la chaîne du nombre saisi est inférieure à 10
       if (inputNumber === "0") {
-        // Si la chaîne du nombre saisi est égale à "0"
-        inputNumber = digit.textContent; // Remplacer la chaîne du nombre saisi par le contenu textuel du bouton des chiffres
+        inputNumber = digit.textContent;
       } else {
-        // Si la chaîne du nombre saisi n'est pas égale à "0"
         inputNumber += digit.textContent; // Ajouter le contenu textuel du bouton des chiffres à la fin de la chaîne du nombre saisi
       }
       updateDisplay(); // Mettre à jour l'affichage
