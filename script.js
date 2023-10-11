@@ -130,27 +130,26 @@ digitZeroTwo.addEventListener("click", btnZeroTwo);
 
 // Parcourir les boutons des chiffres avec une boucle for...of
 for (let digit of digits) {
-  // Ajouter un écouteur d'événement à chaque bouton des chiffres qui ajoute le chiffre correspondant à la chaîne du nombre saisi et met à jour l'affichage
   digit.addEventListener("click", () => {
     if (inputNumber.length < 10) {
       if (inputNumber === "0") {
         inputNumber = digit.textContent;
       } else {
-        inputNumber += digit.textContent; // Ajouter le contenu textuel du bouton des chiffres à la fin de la chaîne du nombre saisi
+        inputNumber += digit.textContent;
       }
-      updateDisplay(); // Mettre à jour l'affichage
+      updateDisplay();
     }
 }); }
 
 // Ajouter un écouteur d’événement au bouton du point décimal qui ajoute un point décimal à la chaîne du nombre saisi si elle n’en contient pas déjà un et met à jour l’affichage 
 dot.addEventListener("click", () => { 
-  if (inputNumber.length < 10) { // Si la longueur de la chaîne du nombre saisi est inférieure à 10 
-  if (!inputNumber.includes(".")) { // Si la chaîne du nombre saisi ne contient pas de point décimal 
-      if (inputNumber === "") { // Si la chaîne du nombre saisi est vide 
-          inputNumber = "0."; // Affecter la chaîne “0.” à la chaîne du nombre saisi 
-      } else { // Si la chaîne du nombre saisi n’est pas vide 
-          inputNumber += "."; // Ajouter un point décimal à la fin de la chaîne du nombre saisi 
-      } updateDisplay(); // Mettre à jour l’affichage 
+  if (inputNumber.length < 10) {  
+  if (!inputNumber.includes(".")) { 
+      if (inputNumber === "") { 
+          inputNumber = "0."; 
+      } else { 
+          inputNumber += "."; 
+      } updateDisplay(); //  
   } } });
 
   
