@@ -80,17 +80,15 @@ function getPercentage() {
 // Une fonction qui ajoute un opérateur au calcul en cours
 function addOperator(operator) {
   if (inputNumber) {
-    // Si la chaîne du nombre saisi n'est pas vide
     if (calculationString) {
-      // Si la chaîne du calcul en cours n'est pas vide
-      calculationString += ` ${inputOperator} ${inputNumber}`; // Ajouter l'opérateur et le nombre saisis à la fin de la chaîne du calcul en cours
+      calculationString += ` ${inputOperator} ${inputNumber}`;
       result = eval(calculationString); // Évaluer la chaîne du calcul en cours et affecter le résultat à la variable result
-    } else {
-      // Si la chaîne du calcul en cours est vide
-      calculationString = inputNumber; // Affecter le nombre saisi à la chaîne du calcul en cours
+    } 
+    else {
+      calculationString = inputNumber;
       result = Number(inputNumber); // Convertir le nombre saisi en nombre et l'affecter à la variable result
     }
-    inputNumber = ""; // Réinitialiser la chaîne du nombre saisi
+    inputNumber = "";
     inputOperator = operator; // Affecter l'opérateur passé en paramètre à la chaîne de l'opérateur saisi
     updateDisplay(); // Mettre à jour l'affichage
   }
@@ -178,42 +176,4 @@ dot.addEventListener("click", () => {
       } updateDisplay(); // Mettre à jour l’affichage 
   } } });
 
-  // Ajouter un écouteur d’événement à l’élément input qui permet de saisir des nombres avec le clavier 
-input.addEventListener("keydown", (event) => { 
-
-  if (event.key >= "0" || "0" && event.key <= "9") { // Si la touche enfoncée est un chiffre de 0 à 9 
-      if (inputNumber.length < 10) { // Si la longueur de la chaîne du nombre saisi est inférieure à 10 
-          if (inputNumber === "0") { // Si la chaîne du nombre saisi est égale à “0” 
-              inputNumber = event.key; // Remplacer la chaîne du nombre saisi par la touche enfoncée 
-          } else { // Si la chaîne du nombre saisi n’est pas égale à “0” 
-              inputNumber += event.key; // Ajouter la touche enfoncée à la fin de la chaîne du nombre saisi 
-          } updateDisplay(); // Mettre à jour l’affichage 
-      } 
-  } 
-  else if (event.key === ".") { // Si la touche enfoncée est le point décimal 
-          if (inputNumber.length < 10) { // Si la longueur de la chaîne du nombre saisi est inférieure à 10 
-              
-              if (!inputNumber.includes(".")) { // Si la chaîne du nombre saisi ne contient pas de point décimal 
-                  if (inputNumber === "") { // Si la chaîne du nombre saisi est vide 
-                      inputNumber = "0."; // Affecter la chaîne “0.” à la chaîne du nombre saisi 
-                  } 
-                  else { // Si la chaîne du nombre saisi n’est pas vide 
-                      inputNumber += "."; // Ajouter un point décimal à la fin de la chaîne du nombre saisi 
-                  } updateDisplay(); // Mettre à jour l’affichage 
-              } 
-          } 
-  } 
-              
-  else if (event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/") { // Si la touche enfoncée est un opérateur arithmétique
-       addOperator(event.key); // Appeler la fonction addOperator avec le paramètre correspondant à la touche enfoncée 
-  } 
-  else if (event.key === "=" || event.key === "Enter") { // Si la touche enfoncée est le symbole d’égalité ou la touche Entrée 
-      calculate(); // Appeler la fonction calculate 
-  } 
-  else if (event.key === "Backspace") { // Si la touche enfoncée est la touche Retour arrière 
-      clearInput(); // Appeler la fonction clearInput 
-  } 
-  else if (event.key === "Escape") { // Si la touche enfoncée est la touche Échap 
-      resetAll(); // Appeler la fonction resetAll 
-  } });
-
+  
