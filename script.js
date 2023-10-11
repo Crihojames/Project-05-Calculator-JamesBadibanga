@@ -110,36 +110,17 @@ function btnZeroTwo() {
    updateDisplay();
 };
 
-//fonction pour calcule le nobre pi
-function btnZeroTwo() {
-  inputNumber += "00";
-   updateDisplay();
-}
-
 // Ajouter des écouteurs d'événements aux boutons
 
-// Ajouter un écouteur d'événement au bouton AC qui appelle la fonction resetAll
 reset.addEventListener("click", resetAll);
-
-// Ajouter un écouteur d'événement au bouton C qui appelle la fonction clearInput
 clear.addEventListener("click", clearInput);
-
-// Ajouter un écouteur d'événement au bouton +/- qui appelle la fonction changeSign
 plusoumoins.addEventListener("click", changeSign);
-
-// Ajouter un écouteur d'événement au bouton % qui appelle la fonction getPercentage
 percentage.addEventListener("click", getPercentage);
 
-// Ajouter un écouteur d'événement au bouton ÷ qui appelle la fonction addOperator avec le paramètre "/"
+
 divideby.addEventListener("click", () => addOperator("/"));
-
-// Ajouter un écouteur d'événement au bouton × qui appelle la fonction addOperator avec le paramètre "*"
 times.addEventListener("click", () => addOperator("*"));
-
-// Ajouter un écouteur d'événement au bouton - qui appelle la fonction addOperator avec le paramètre "-"
 minus.addEventListener("click", () => addOperator("-"));
-
-// Ajouter un écouteur d'événement au bouton + qui appelle la fonction addOperator avec le paramètre "+"
 plus.addEventListener("click", () => addOperator("+"));
 
 // Ajouter un écouteur d'événement au bouton = qui appelle la fonction calculate
