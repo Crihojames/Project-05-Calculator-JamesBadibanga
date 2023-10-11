@@ -1,7 +1,7 @@
 
 // Sélectionner les éléments du DOM
 const input = document.getElementById("input");
-const calcul = document.getElementById("calcul"); // L'élément p qui affiche le calcul en cours
+const calcul = document.getElementById("calcul");
 const reset = document.getElementById("reset");
 const clear = document.getElementById("clear");
 const plusoumoins = document.getElementById("plusoumoins");
@@ -16,15 +16,12 @@ const dot = document.querySelector(".dot");
 let inputcurseur = document.querySelector('input');
 const digitZeroTwo = document.getElementById("twoZero");
 const pi = document.getElementById("pi");
+const form = document.querySelector('form');
 
 // Masque le curseur clignotant By yvonne
 inputcurseur.style.caretColor = 'transparent';
 
-//Empêche le comportement par défaut
-const form = document.querySelector('form');
-form.addEventListener('submit',event =>{
-    event.preventDefault();
-});
+
 
 
 // Déclarer les variables globales
@@ -109,6 +106,11 @@ function btnZeroTwo() {
   inputNumber += "00";
    updateDisplay();
 };
+
+//une fonction qui empêche le comportement par défaut du type de bouton
+form.addEventListener('submit',event =>{
+  event.preventDefault();
+});
 
 // Ajouter des écouteurs d'événements aux boutons
 
